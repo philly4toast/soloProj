@@ -1,27 +1,27 @@
 const todosData = [
   {
       id: 1,
-      text: "Take out the trash",
+      text: "A6M2 Zero Fighter",
       completed: true
   },
   {
       id: 2,
-      text: "Grocery shopping",
+      text: "Grumman F4F Wildcat",
       completed: false
   },
   {
       id: 3,
-      text: "Clean gecko tank",
+      text: "Japanese amphibious Tank",
       completed: false
   },
   {
       id: 4,
-      text: "Mow lawn",
-      completed: true
+      text: "Infantry squad",
+      completed: false
   },
   {
       id: 5,
-      text: "Catch up on Arrested Development",
+      text: "American Tank (not yet ordered)",
       completed: false
   }
 ]
