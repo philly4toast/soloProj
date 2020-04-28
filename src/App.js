@@ -1,7 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import todosData from './todosData'
+import todosData from './TodosData'
+import TodoItem from './TodoItem'
 
 class App extends React.Component {
   constructor(props){
@@ -9,6 +10,17 @@ class App extends React.Component {
     this.state = {
       todos: todosData
     }
+  }
+
+  render(){
+    let todoItems = this.state.todos.map(item =>
+        <TodoItem key={item.id} item={item}/>
+    )
+    return (
+      <div>
+        {todoItems}
+      </div>
+    )
   }
 }
 
