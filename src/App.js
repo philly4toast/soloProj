@@ -17,7 +17,10 @@ class App extends React.Component {
     this.setState(prevState =>{
       const newTodos = prevState.todos.map(todo => {
         if (todo.id === id){
-          todo.completed = !todo.completed;
+          return {
+            ...todo,
+            completed: !todo.completed
+          }
         }
         return todo;
       })
@@ -34,7 +37,8 @@ class App extends React.Component {
         <TodoItem key={item.id} item={item} handleChange={this.handleChange}/>
     )
     return (
-      <div>
+      <div className='todo-list'>
+        <img src={logo} className="App-logo" alt="logo" />
         {todoItems}
       </div>
     )
