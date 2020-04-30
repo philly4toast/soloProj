@@ -14,6 +14,17 @@ class App extends React.Component {
   }
 
   handleChange(id){
+    this.setState(prevState =>{
+      const newTodos = prevState.todos.map(todo => {
+        if (todo.id === id){
+          todo.completed = !todo.completed;
+        }
+        return todo;
+      })
+      return {
+        todos: newTodos
+      }
+    })
 
     console.log('The id of the item you\'re trying to change is ', id)
   }
