@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/philly4toast/soloProj/issues"
   },
-  "homepage": "https://github.com/philly4toast/soloProj#readme"
+  "homepage": "https://github.com/philly4toast/soloProj#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.0"
+  }
 }
