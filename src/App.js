@@ -5,18 +5,31 @@ import sampleData from "../DB/sampleData.js"
 import ModelItem from './ModelItem.js';
 
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      models: sampleData
+    }
+  }
+
+  handleChange(id){
+
+    console.log('you just clicked on model # ', id)
+  }
+
+
 
 
   render() {
-    const todoModels = sampleData.map(model => {
-    return (<ModelItem 
-        type='checkBox' checked={model.completed} model={model}
+    const todoModels = this.state.models.map(model => {
+    return (<ModelItem key={model.id}
+        model={model} handleChange={this.handleChange}
         />)
     })
 
     return (
       <div className="App">
-        <h1> Hello, World! </h1>
+        <h1> Quarantine Models </h1>
         <h2>{todoModels}</h2>
       </div>
     );
