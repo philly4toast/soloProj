@@ -10,9 +10,22 @@ class App extends Component {
     this.state = {
       models: sampleData
     }
+    this.handleChange = this.handleChange.bind(this)
   }
 
   handleChange(id){
+    this.setState(prevState=>{
+      const newStatus = prevState.models.map(model=>{
+        if (model.id === id){
+          return {
+            ...model,
+            completed: !model.completed
+          }
+        }
+        return model;
+      })
+      return {models: newStatus}
+    })
 
     console.log('you just clicked on model # ', id)
   }
@@ -22,9 +35,13 @@ class App extends Component {
 
   render() {
     const todoModels = this.state.models.map(model => {
-    return (<ModelItem key={model.id}
-        model={model} handleChange={this.handleChange}
-        />)
+      return (
+        <ModelItem 
+          key={model.id}
+          model={model} 
+          handleChange={this.handleChange}
+          />
+      )
     })
 
     return (
@@ -34,6 +51,7 @@ class App extends Component {
       </div>
     );
   }
+
 }
 
 export default hot(module)(App);
