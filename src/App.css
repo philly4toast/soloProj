@@ -3,3 +3,13 @@
   font-family: Arial, Helvetica, sans-serif;
   color: blue;
 }
+
+.models{
+  font-size: 16px;
+  color: black;
+  display: flex;
+}
+
+* {
+
+}

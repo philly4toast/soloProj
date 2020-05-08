@@ -8,7 +8,11 @@ class App extends Component {
 
   render() {
     const todoModels = sampleData.map(model => {
-    return <p>{model.text}</p>
+    return (<div>
+        <p className='models'>{model.text}
+        <input type='checkBox' checked={model.completed}></input>
+        </p>
+    </div>)
     })
 
     return (
