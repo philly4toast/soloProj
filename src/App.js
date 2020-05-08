@@ -2,17 +2,16 @@ import React, { Component } from "react";
 import { hot } from "react-hot-loader";
 import "./App.css";
 import sampleData from "../DB/sampleData.js"
+import ModelItem from './ModelItem.js';
 
 class App extends Component {
 
 
   render() {
     const todoModels = sampleData.map(model => {
-    return (<div>
-        <p className='models'>{model.text}
-        <input type='checkBox' checked={model.completed}></input>
-        </p>
-    </div>)
+    return (<ModelItem 
+        type='checkBox' checked={model.completed} model={model}
+        />)
     })
 
     return (
