@@ -3,15 +3,22 @@ import React from 'react'
 
 
 class ModelItem extends React.Component{
-
+  
   render(){
+    var completedStyle = {
+      backgroundColor: 'black',
+      fontStyle: 'italic',
+      color: 'gray',
+      textDecoration: 'line-through'
+    }
+    
     return (
-      <div>
-      <div className="models">
+      <div  className="models" style={this.props.model.completed ? completedStyle : null} >
+      <div >
           <input type='checkbox' checked={this.props.model.completed} id={this.props.model.id} onChange={()=>this.props.handleChange(this.props.model.id)} />
           <p>{this.props.model.text}</p>
         </div>
-          <img className="thumbnail" src={this.props.model.imageURL}/>
+          <img className="thumbnail" src={this.props.model.completed ? this.props.model.completedURL : this.props.model.imageURL}/>
       </div>
     )
   }

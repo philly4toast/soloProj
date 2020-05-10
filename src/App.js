@@ -13,6 +13,10 @@ class App extends Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
+  componentDidMount(){
+    alert('WW2 PACIFIC THEATER models')
+  }
+
   handleChange(id){
     this.setState(prevState=>{
       const newStatus = prevState.models.map(model=>{
