@@ -1,9 +1,6 @@
 import React from 'react'
 
-
-
 class ModelItem extends React.Component{
-  
   render(){
     var completedStyle = {
       backgroundColor: 'black',
@@ -11,20 +8,32 @@ class ModelItem extends React.Component{
       color: 'gray',
       textDecoration: 'line-through'
     }
-    
+
+    const {
+      model,
+      handleChange,
+    } = this.props
+
+    const style = model.completed ? completedStyle : null
+    const imgSrc = model.completed ? model.completedURL : model.imageURL
+
     return (
-      <div  className="models" style={this.props.model.completed ? completedStyle : null} >
-      <div >
-          <input type='checkbox' checked={this.props.model.completed} id={this.props.model.id} onChange={()=>this.props.handleChange(this.props.model.id)} />
-          <p>{this.props.model.text}</p>
+      <div className="models" style={style} >
+        <div>
+          <input
+            type='checkbox'
+            checked={model.completed}
+            id={model.id}
+            onChange={
+              ()=>handleChange(model.id)
+            } />
+          <p>{model.text}</p>
         </div>
-          <img className="thumbnail" src={this.props.model.completed ? this.props.model.completedURL : this.props.model.imageURL}/>
+        <img className="thumbnail" src={imgSrc}/>
       </div>
     )
   }
-
 }
-
 
 // function ModelItem(props){
 //   return (
