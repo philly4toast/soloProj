@@ -11,10 +11,8 @@ var connection = mysql.createConnection({
   password: 'jezebel',
   database: 'ww2Mod'
 });
-
 connection.connect();
 
-
 app.listen(port, () => {
-  console.log('On port #', port)
+  console.log(`On port # ${port}`)
 })
