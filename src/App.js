@@ -17,12 +17,12 @@ class App extends Component {
     alert('WW2 PACIFIC THEATER models')
   }
 
-  getModelInfo(){
-    ajax({
-      method: "get",
-      url: 
-    })
-  }
+  // getModelInfo(){
+  //   ajax({
+  //     method: "get",
+  //     url: 
+  //   })
+  // }
 
   handleChange(id){
     this.setState(prevState=>{

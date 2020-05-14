@@ -13,6 +13,6 @@ var connection = mysql.createConnection({
 });
 connection.connect();
 
-app.listen(port, () => {
+app.listen(port, () => 
   console.log(`On port # ${port}`)
-})
+)

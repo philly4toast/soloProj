@@ -13,9 +13,10 @@
 DROP TABLE IF EXISTS `models`;
 		
 CREATE TABLE `models` (
-  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
-  `model_name` VARCHAR(20) NULL DEFAULT NULL,
-  `description` MEDIUMTEXT NULL DEFAULT NULL,
+  `id` INTEGER NOT NULL AUTO_INCREMENT,
+  `model_name` VARCHAR(50) NOT NULL,
+  `description` VARCHAR(50) NOT NULL,
+  `completed` VARCHAR(7) NOT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -27,9 +28,9 @@ CREATE TABLE `models` (
 DROP TABLE IF EXISTS `pictures`;
 		
 CREATE TABLE `pictures` (
-  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
-  `imgURL` VARCHAR(300) NULL DEFAULT NULL,
-  `model_id` INTEGER NULL DEFAULT NULL,
+  `id` INTEGER NOT NULL AUTO_INCREMENT,
+  `image_url` VARCHAR(200) NOT NULL,
+  `model_id` INTEGER NOT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -50,7 +51,12 @@ ALTER TABLE `pictures` ADD FOREIGN KEY (model_id) REFERENCES `models` (`id`);
 -- Test Data
 -- ---
 
--- INSERT INTO `models` (`id`,`model_name`,`description`) VALUES
+-- INSERT INTO `models` (`id`,`model_name`,`description`,`completed`) VALUES
+-- ('','','','');
+-- INSERT INTO `pictures` (`id`,`image_url`,`model_id`) VALUES
 -- ('','','');
--- INSERT INTO `pictures` (`id`,`imgURL`,`model_id`) VALUES
--- ('','','');
+
+
+
+INSERT INTO `pictures` (`image_url`,`model_id`) VALUES
+('https://airandspace.si.edu/sites/default/files/styles/slideshow_xlg/public/images/collection-objects/record-images/NASM-NASM-9A00201.jpg?itok=Y1C_Buoi','2');
