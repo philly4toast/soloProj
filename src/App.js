@@ -3,6 +3,7 @@ import { hot } from "react-hot-loader";
 import "./App.css";
 import sampleData from "../DB/sampleData.js"
 import ModelItem from './ModelItem.js';
+import {ajax} from "jquery";
 
 class App extends Component {
   constructor(props){
@@ -17,12 +18,15 @@ class App extends Component {
     alert('WW2 PACIFIC THEATER models')
   }
 
-  // getModelInfo(){
+  // getModelList() {
   //   ajax({
-  //     method: "get",
-  //     url: 
+  //     method: "GET",
+  //     url: ,
+  //     success: ,
+  //     error: 
   //   })
   // }
+
 
   handleChange(id){
     this.setState(prevState=>{
