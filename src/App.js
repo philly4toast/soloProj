@@ -15,17 +15,17 @@ class App extends Component {
   }
 
   componentDidMount(){
-    this.getModelList();
+    // this.getModelList();
   }
 
-  getModelList() {
-    ajax({
-      method: "GET",
-      url: '/ammo',
-      success: (response)=>console.log(response),
-      error: (e)=>console.log(console.log(e))
-    })
-  }
+  // getModelList() {
+  //   ajax({
+  //     method: "GET",
+  //     url: '/ammo',
+  //     success: (response)=>console.log(response),
+  //     error: (e)=>console.log(console.log(e))
+  //   })
+  // }
 
 
   handleChange(id){
@@ -33,7 +33,7 @@ class App extends Component {
       const newStatus = prevState.models.map(model=>{
         if (model.id === id){
           return {
-            ...model,
+            // ...model,
             completed: !model.completed
           }
         }

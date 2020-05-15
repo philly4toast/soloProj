@@ -13,7 +13,7 @@ const path = require('path');
 // });
 // connection.connect();
 
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../dist/bundle.js')));
 
 app.listen(port, () => 
   console.log(`On port # ${port}`)
