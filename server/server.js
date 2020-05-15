@@ -19,3 +19,10 @@ app.listen(port, () =>
   console.log(`On port # ${port}`)
 )
 
+app.get('/ammo', (req, res) => {
+  console.log('server up')
+    res.send({foo: "sfds"})
+    // if (error) throw error;
+});
+
+
