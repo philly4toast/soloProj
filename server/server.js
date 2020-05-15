@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
-const port = 3000 || process.env.port
-
+const port = 3001;
+const path = require('path');
 
 
 // var mysql = require('mysql');
@@ -13,7 +13,7 @@ const port = 3000 || process.env.port
 // });
 // connection.connect();
 
-// app.use(express.static(path.join(__dirname, '../client/dist')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 app.listen(port, () => 
   console.log(`On port # ${port}`)
@@ -24,5 +24,6 @@ app.get('/ammo', (req, res) => {
     res.send({foo: "sfds"})
     // if (error) throw error;
 });
+
 
 

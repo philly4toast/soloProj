@@ -15,17 +15,17 @@ class App extends Component {
   }
 
   componentDidMount(){
-    alert('WW2 PACIFIC THEATER models')
+    this.getModelList();
   }
 
-  // getModelList() {
-  //   ajax({
-  //     method: "GET",
-  //     url: ,
-  //     success: ,
-  //     error: 
-  //   })
-  // }
+  getModelList() {
+    ajax({
+      method: "GET",
+      url: '/ammo',
+      success: (response)=>console.log(response),
+      error: (e)=>console.log('we have some problems with' + e)
+    })
+  }
 
 
   handleChange(id){
