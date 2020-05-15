@@ -23,7 +23,7 @@ class App extends Component {
       method: "GET",
       url: '/ammo',
       success: (response)=>console.log(response),
-      error: (e)=>console.log('we have some problems with' + e)
+      error: (e)=>console.log(console.log(e))
     })
   }
 
