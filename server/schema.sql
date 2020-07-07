@@ -16,7 +16,7 @@ CREATE TABLE `models` (
   `id` INTEGER NOT NULL AUTO_INCREMENT,
   `model_name` VARCHAR(50) NOT NULL,
   `description` VARCHAR(50) NOT NULL,
-  `completed` VARCHAR(7) NOT NULL,
+  `completed` BOOLEAN NOT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -58,5 +58,3 @@ ALTER TABLE `pictures` ADD FOREIGN KEY (model_id) REFERENCES `models` (`id`);
 
 
 
-INSERT INTO `pictures` (`image_url`,`model_id`) VALUES
-('https://airandspace.si.edu/sites/default/files/styles/slideshow_xlg/public/images/collection-objects/record-images/NASM-NASM-9A00201.jpg?itok=Y1C_Buoi','2');

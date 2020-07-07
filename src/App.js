@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { hot } from "react-hot-loader";
+
 import "./App.css";
 import sampleData from "../DB/sampleData.js"
 import ModelItem from './ModelItem.js';
@@ -69,5 +69,5 @@ class App extends Component {
 
 }
 
-export default hot(module)(App);
-// export default App;
+
+export default App;
